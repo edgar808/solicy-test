@@ -84,21 +84,13 @@ export class ExpressServer {
           },
           info: {
               description: 'Generated with `routing-controllers-openapi`',
-              title: 'Agora API',
-              version: '2.0.0'
+              title: 'Solicy API',
+              version: '1.0.0'
           },
           servers: [
               {
                   url: `http://localhost:${Environment.ServerPort}/${Environment.apiPrefix}`,
                   description: 'local'
-              },
-              {
-                  url: 'https://agora.server.brainstormtech.io/api_v2/',
-                  description: 'dev'
-              },
-              {
-                  url: 'https://api.vendo.am/api_v2/',
-                  description: 'prod'
               }
           ]
       })
