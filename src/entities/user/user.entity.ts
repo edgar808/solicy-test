@@ -13,10 +13,10 @@ export class UserEntity {
     address!: string;
 
     @Column({ type: 'float' })
-    cash1!: string;
+    cash1!: number;
 
     @Column({ type: 'float' })
-    cash2!: string;
+    cash2!: number;
 
     @Column({ type: 'float' })
     cash3!: number;

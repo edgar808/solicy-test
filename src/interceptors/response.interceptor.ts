@@ -32,6 +32,7 @@ export class ResponseInterceptor implements InterceptorInterface {
             }
             return {
                 meta: { pagination },
+                success:true,
                 data: content.data
             };
         }

@@ -13,7 +13,7 @@ export class ProductEntity {
     id!: number;
 
     @Column({ type: 'uuid' })
-    address!: number;
+    address!: string;
 
     @Column({ type: 'timestamp' })
     @CreateDateColumn()

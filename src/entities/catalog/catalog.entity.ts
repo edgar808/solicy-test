@@ -39,6 +39,9 @@ export class CatalogEntity {
     @Column({ type: 'integer' })
     req3!: number;
 
+    @Column({ type: 'integer' })
+    category!: number;
+
     @Column({ type: 'timestamp' })
     @CreateDateColumn()
     createdAt!: Date;
