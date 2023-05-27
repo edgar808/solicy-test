@@ -1,5 +1,5 @@
 import { Service } from 'typedi';
-import { Transaction } from 'typeorm';
+import { Transactional } from 'typeorm-transactional-cls-hooked';
 import { InjectRepository } from 'typeorm-typedi-extensions';
 import { UserBoughtDto, UserCreateDto } from '../dto/UserDto';
 import { AssetEntity } from '../entities/asset/asset.entity';
@@ -31,7 +31,7 @@ export class UserService {
         await this.userRepository.save(data)
     }
 
-    @Transaction()
+    @Transactional()
     async buyProduct(data: UserBoughtDto) {
         const user = await this.userRepository.findOneOrFail({
             where:{
@@ -43,13 +43,13 @@ export class UserService {
 
         await this.checkWallet(user, catalog);
 
-        const asset = await this.assetRepository.findOneOrFail({
+        const asset = await this.assetRepository.findOne({
             where:{
                 address:data.address
             }
         });
 
-        await this.checkLevel(asset, catalog);
+        if(asset)await this.checkLevel(asset, catalog);
 
         await this.assetRepository.save({
             address:data.address,

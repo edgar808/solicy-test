@@ -1,5 +1,5 @@
 import { Type } from 'class-transformer';
-import { IsNotEmpty, IsNumber, IsString, Max, MIN, Min, ValidateNested } from 'class-validator';
+import { IsNotEmpty, IsNumber, IsString, Max, Min, ValidateNested } from 'class-validator';
 
 export class CatalogCreateDto{
     @IsNotEmpty()

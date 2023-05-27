@@ -36,6 +36,7 @@ export class Exception extends Error {
   public getDetails() {
     return  {
       httpCode: this.httpCode,
+      success:false,
       errors: this.errors
     };
   }

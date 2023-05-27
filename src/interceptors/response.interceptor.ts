@@ -17,7 +17,7 @@ export class ResponseInterceptor implements InterceptorInterface {
         if (!content) return 'OK'
 
         if (!content.data) {
-            return { data: content };
+            return { success:true, data: content };
         }
 
         if (content.data  &&  Array.isArray(content.data) ) {
@@ -37,7 +37,7 @@ export class ResponseInterceptor implements InterceptorInterface {
             };
         }
 
-        return { data: content.data };
+        return { success:true, data: content.data };
 
     }
 }
