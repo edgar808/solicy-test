@@ -23,10 +23,10 @@ export class UserController {
     }
 
     @Post('/buyProduct')
-    @HttpCode(HttpStatus.NO_CONTENT)
+    @HttpCode(HttpStatus.OK)
     @ResponseSchema(UserBoughtReponseDto)
     async buyProduct(@Body() data: UserBoughtDto) {
-        await this.userService.buyProduct(data);
+        return await this.userService.buyProduct(data);
     }
 
 }
