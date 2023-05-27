@@ -19,7 +19,7 @@ export class AssetEntity {
     level!: number;
 
     @Column({ type: 'uuid' })
-    address!: number;
+    address!: string;
 
     @Column({ type: 'timestamp' })
     @CreateDateColumn()
