@@ -21,6 +21,7 @@ import { validationMetadatasToSchemas } from 'class-validator-jsonschema'
 //@ts-ignore
 import { defaultMetadataStorage  } from 'class-transformer/cjs/storage'
 import { routingControllersToSpec } from 'routing-controllers-openapi';
+import { CatalogController } from '../controllers/catalog.controller';
 
 export class ExpressServer {
 
@@ -117,6 +118,7 @@ export class ExpressServer {
       routePrefix: `/${Environment.apiPrefix}`,
       controllers: [
         //controlers
+        CatalogController
       ],
       middlewares: [ ErrorHandlerMiddleware ],
       interceptors: [ ResponseInterceptor ],
